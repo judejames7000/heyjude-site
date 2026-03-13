@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hey Jude — AI Business PRD in 24 Hours</title>
+  <meta name="description" content="You have an idea. I'll turn it into a dev-ready product spec in 24 hours. $99. No fluff, no filler — just clarity." />
+  <meta property="og:title" content="Hey Jude — AI Business PRD in 24 Hours" />
+  <meta property="og:description" content="You have an idea. I'll turn it into a dev-ready product spec in 24 hours. $99." />
+  <meta property="og:url" content="https://heyjude.site" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #f0f0f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 24px 32px;
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    header .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    header .logo span { color: #7c6bff; }
+
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px 60px;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #1a1a2e;
+      border: 1px solid #7c6bff44;
+      color: #a89bff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+      letter-spacing: 0.3px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      color: #ffffff;
+      margin-bottom: 24px;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: #7c6bff;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #888;
+      max-width: 540px;
+      margin-bottom: 48px;
+    }
+
+    .price-tag {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .price-tag strong {
+      color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      background: #7c6bff;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 18px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover { background: #6a5aee; transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-secondary {
+      display: block;
+      width: 100%;
+      background: transparent;
+      color: #888;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 14px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid #2a2a2a;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: #555; color: #ccc; }
+
+    .guarantee {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .how {
+      background: #0f0f0f;
+      border-top: 1px solid #1e1e1e;
+      padding: 80px 24px;
+    }
+
+    .how-inner {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #7c6bff;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: #fff;
+      margin-bottom: 56px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+    }
+
+    .step {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .step-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: #7c6bff;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .step h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .what-you-get {
+      padding: 80px 24px;
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 20px;
+      background: #111;
+      border: 1px solid #1e1e1e;
+      border-radius: 12px;
+    }
+
+    .feature-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .feature-text {
+      font-size: 14px;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    .feature-text strong {
+      display: block;
+      color: #ccc;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .cta-bottom {
+      background: #0f0f0f;
+      border-top: 1px solid #1e1e1e;
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .cta-bottom h2 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .cta-bottom p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    .cta-bottom .btn-primary {
+      display: inline-block;
+      width: auto;
+      min-width: 280px;
+    }
+
+    footer {
+      padding: 24px 32px;
+      border-top: 1px solid #1a1a1a;
+      text-align: center;
+      font-size: 13px;
+      color: #444;
+    }
+
+    footer a { color: #7c6bff; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">hey<span>jude</span>.site</div>
+  </header>
+
+  <section class="hero">
+    <div class="badge">AI Business PRD · 24-hour turnaround</div>
+    <h1>Your idea is fine.<br/><em>Your spec is killing it.</em></h1>
+    <p class="subtitle">
+      Engineers can't build what you haven't defined. I turn your rough idea into a dev-ready product spec — user stories, acceptance criteria, tech requirements — in 24 hours.
+    </p>
+    <div class="price-tag"><strong>$99</strong> · flat fee · one brief · one PRD</div>
+    <br/>
+    <div class="cta-group">
+      <a href="https://tally.so/r/XxGKyd" class="btn-primary">Brief your idea →</a>
+      <a href="https://judejames.gumroad.com/l/ai-business-prd" class="btn-secondary">Buy on Gumroad</a>
+    </div>
+    <p class="guarantee">⚡ 24-hour turnaround · 100% satisfaction guaranteed</p>
+  </section>
+
+  <section class="how">
+    <div class="how-inner">
+      <div class="section-label">How it works</div>
+      <div class="section-title">Three steps to a spec your team can build.</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01 · Brief</div>
+          <h3>Tell me your idea</h3>
+          <p>Fill in the intake form. Tell me who it's for, what it does, and what problem it solves. 10 minutes, no jargon required.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02 · PRD</div>
+          <h3>I write the spec</h3>
+          <p>Within 24 hours, I deliver a full PRD — problem statement, user stories, acceptance criteria, tech requirements, and edge cases.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03 · Ship</div>
+          <h3>Hand it to your team</h3>
+          <p>Give your engineers a spec they can actually build from. No back-and-forth, no guesswork, no wasted sprints.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="what-you-get">
+    <div class="section-label">What you get</div>
+    <div class="section-title">A PRD your engineers will thank you for.</div>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🎯</div>
+        <div class="feature-text"><strong>Problem Statement</strong>Clear definition of the problem being solved and who it's for.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">👤</div>
+        <div class="feature-text"><strong>User Stories</strong>Structured as "As a [user], I want to [action] so that [outcome]."</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">✅</div>
+        <div class="feature-text"><strong>Acceptance Criteria</strong>Testable, unambiguous conditions for each feature.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⚙️</div>
+        <div class="feature-text"><strong>Tech Requirements</strong>API needs, integrations, performance targets, constraints.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🚫</div>
+        <div class="feature-text"><strong>Out of Scope</strong>Explicit list of what this version won't include.</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⚠️</div>
+        <div class="feature-text"><strong>Edge Cases & Risks</strong>The things nobody thinks about until they're in production.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-bottom">
+    <h2>Stop building the wrong thing.</h2>
+    <p>$99. 24 hours. A spec your team can actually build from.</p>
+    <a href="https://tally.so/r/XxGKyd" class="btn-primary">Brief your idea →</a>
+  </section>
+
+  <footer>
+    &copy; 2026 heyjude.site &nbsp;·&nbsp; Questions? <a href="mailto:jude@heyjude.site">jude@heyjude.site</a>
+  </footer>
+
+</body>
+</html>
